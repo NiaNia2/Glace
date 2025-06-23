@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CréationDesGlacesController!
+{% endblock %}
+
+{% block body %}
+	{{form_start(glaceform)}}
+	{{form_widget(glaceform)}}
+	<button>Ajouter</button>
+	{{form_end(glaceform)}}
+{% endblock %}
