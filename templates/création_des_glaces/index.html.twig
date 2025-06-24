@@ -6,12 +6,17 @@
 {% block body %}
 	{% for glace in glaces %}
 		<h2>{{ glace.nom }}</h2>
-		<a href="{{path('modif_des_glaces',{'id' : glace.id} )}}">Modifier</a>
-		<form method="POST" onsubmit="return confirm('confirmer la suppression?')" action="{{ path('delete_des_glaces', {'id': glace.id}) }}">
-			<input type="hidden" name="_method" value="delete">
-			<input type="hidden" name="_token" value="{{csrf_token('SUP' ~ glace.id)}}">
-			<input id="delete" type="submit" value="Supprimer">
-		</form>
+		<div>
+			<img src="{{asset('uploads/images/'~ glace.imageName )}}" alt="image de la glace">
+		</div>
+		{% if app.user %}
+			<a href="{{path('modif_des_glaces',{'id' : glace.id} )}}" class="btn">Modifier</a>
+			<form method="POST" onsubmit="return confirm('confirmer la suppression?')" action="{{ path('delete_des_glaces', {'id': glace.id}) }}">
+				<input type="hidden" name="_method" value="delete">
+				<input type="hidden" name="_token" value="{{csrf_token('SUP' ~ glace.id)}}">
+				<input id="delete" type="submit" value="Supprimer" class="btn">
+			</form>
+		{% endif %}
 	{% endfor %}
 
 {% endblock %}

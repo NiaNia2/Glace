@@ -22,9 +22,15 @@
 		<nav>
 			<a href="{{path('app_acceuil')}}">Acceuil</a>
 			<a href="{{path('glaces')}}">
-				glaces</a>
-			<a href="{{path('creation_des_glaces')}}">
-				création glaces</a>
+				Glaces</a>
+			{% if app.user %}
+				<a href="{{path('creation_des_glaces')}}">
+					Création Glaces</a>
+				<a href="{{ path('app_logout') }}">Deconnection</a>
+			{% else %}
+				<a href="{{ path('app_login') }}">Connection</a>
+				<a href="{{ path('creation_user') }}">Inscription</a>
+			{% endif %}
 		</nav>
 		{% block body %}{% endblock %}
 	</body>

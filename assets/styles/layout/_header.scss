@@ -1,6 +1,15 @@
 nav {
-    a {
-        text-decoration: none;
-        color: #96e9e5;
-    }
+    background-color: #FFB6B9;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: #A4161A;
+    font-size: large;
 }

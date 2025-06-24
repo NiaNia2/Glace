@@ -36,7 +36,7 @@ final class CréationDesGlacesController extends AbstractController
 
             $entityManager->flush();
 
-            // $this->addFlash('Glace ajouté');
+            $this->addFlash('succes', 'Glace ajouté');
             return $this->redirectToRoute('glaces');
         }
         return $this->render('création_des_glaces/creation_glace.html.twig', [
@@ -57,7 +57,7 @@ final class CréationDesGlacesController extends AbstractController
 
             $entityManager->flush();
 
-            // $this->addFlash('Glace ajouté');
+            $this->addFlash('success', 'Glace ajouté');
             return $this->redirectToRoute('glaces');
         }
         return $this->render('création_des_glaces/modif_glace.html.twig', [
@@ -75,7 +75,7 @@ final class CréationDesGlacesController extends AbstractController
 
             $entityManager->flush();
 
-            // $this->addFlash('Glace supprimer');
+            $this->addFlash('succes', 'Glace supprimer');
             return $this->redirectToRoute('glaces');
         }
         return $this->redirectToRoute('glaces');
